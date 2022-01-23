@@ -14,6 +14,11 @@ homebrew_prefix = os.getenv("HOMEBREW_PREFIX")
 if homebrew_prefix:
     include_dirs.append(os.path.join(homebrew_prefix, "include"))
     library_dirs.append(os.path.join(homebrew_prefix, "lib"))
+    
+homebrew_prefix = os.getenv("PATH")
+if homebrew_prefix:
+    include_dirs.append(os.path.join(homebrew_prefix, "include"))
+    library_dirs.append(os.path.join(homebrew_prefix, "lib"))
 
 ffibuilder.set_source(
     "_libheif_cffi",
